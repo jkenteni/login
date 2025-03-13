@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.ico">
+    <title>Tela de Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .titulo{
+            color: #007a32;
+            font-size: 30px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #00923f;
+            flex-direction: column;
+        }
+        .container {
+            display: flex;
+            width: 700px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .welcome-section {
+            background: #007a32;
+            color: white;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+        }
+        .welcome-section h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .welcome-section p {
+            font-size: 15px;
+        }
+        .welcome-section button {
+            padding: 10px 20px;
+            background: white;
+            color: #007a32;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .login-container {
+            width: 50%;
+            padding: 30px;
+            text-align: center;
+        }
+        .logo {
+            width: 80px;
+            margin-bottom: 5px;
+        }
+        .input-container {
+            position: relative;
+            margin: 15px 0;
+        }
+        .input-container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        .input-container label {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            padding: 0 5px;
+            color: #777;
+            transition: 0.3s;
+            pointer-events: none;
+        }
+        .input-container input:focus + label,
+        .input-container input:not(:placeholder-shown) + label {
+            top: 0;
+            font-size: 12px;
+            color: #007a32;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background: #007a32;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background: #005a24;
+        }
+        
+        .footer {
+            width: 100%;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+        }
+        .icon {
+            width: 100%;
+            height: 100%;
+            transition: filter 0.4s ease-in-out; /* Usando filtro para cor */
+        }
+
+        .btn {
+            display: inline-block;
+            width: 60px; /* Tamanho do botão */
+            height: 60px; /* Tamanho do botão */
+            background-color: #f1f1f1;
+            margin: 10px;
+            border-radius: 50%; /* Tornando o botão completamente redondo */
+            position: relative;
+            box-shadow: 0 5px 15px -5px #00000070;
+            color: #007a32; /* Cor inicial (verde) */
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.2); /* Menor escala */
+            color: #f1f1f1;
+            box-shadow: 0 8px 20px -5px #00000090; /* Sombra mais nítida ao passar o mouse */
+        }
+
+        .btn:hover .icon {
+            filter: brightness(0) invert(1); /* A cor da imagem muda para branco ao passar o mouse */
+        }
+
+        .btn .icon {
+            filter: brightness(0) saturate(100%) invert(0); /* Cor inicial (verde) */
+            transition: filter 0.4s ease-in-out;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            transform: rotate(45deg);
+            left: -110%;
+            top: 90%;
+            background-color: #007a32;
+            transition: top 0.7s ease-in-out, left 0.7s ease-in-out;
+        }
+
+        .btn:hover::before {
+            top: -10%;
+            left: -10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-section">
+            <h2 class="subtitulo">Bem-vindo!</h2>
+            <p>Sistema desenvolvido para <strong>otimizar o processo de seleção de alunos</strong>, totalmente <strong>criado e implementado por estudantes</strong> da EEEP Padre Bosco de Lima.</p>
+            <div class="page">
+                <br>
+                <div class="ico">
+                    <!-- Botão com o ícone SVG do Instagram -->
+                    <a target="_blank" href="https://www.instagram.com/eeeppejoaoboscodelima/" class="btn">
+                        <img src="img/instagram.svg"  alt="Instagram Logo" class="icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="login-container">
+            <img src="img/logo.png" alt="Logo" class="logo">
+            <h2 class="titulo">Login</h2>
+            <form>
+                <div class="input-container">
+                    <input type="text" id="usuario" placeholder=" " required>
+                    <label for="usuario">Usuário</label>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="senha" placeholder=" " required>
+                    <label for="senha">Senha</label>
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; PinguDevs 2025 | Todos os direitos reservados.
+    </div>
+</body>
+</html>
