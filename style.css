@@ -178,4 +178,9 @@ body {
     .welcome-section {
         order: 2;
     }
+    .btn:focus-within::before {
+        transition: none;
+        top: 90%;
+        left: -120%;
+    }
 }
